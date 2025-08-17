@@ -92,4 +92,17 @@ const users = [
 // console.log(Object.values(tinderUser)) // this return all values in an array
 // console.log(Object.entries(tinderUser))  // it will be array of array
 
-console.log(tinderUser.hasOwnProperty("full_name"))
+// console.log(tinderUser.hasOwnProperty("full_name"))
+
+
+const course = {
+    courseName: "js tuitorial",
+    price: 543,
+    courseInstructor: "Bisho kumar",
+}
+
+// const {courseInstructor} = course  // this is also valid
+// console.log(courseInstructor)
+
+const {courseInstructor: instructor} = course  // this is called destructure of object
+console.log(instructor)
