@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Api Request</title>
 </head>
-<body style="background-color: #212121; color: #fff">
-    
+<body>
+    <div class="card">
+        <img src="" alt="avatars">
+        <div class="container">
+            <h2 id="name">Name</h2>
+            <p id="repo">Public Repository: 34</p>
+        </div>
+    </div>
 </body>
 <script>
     const requestUrl = "https://api.github.com/users/kumarBisho"
@@ -21,8 +28,13 @@
             data = JSON.parse(data)
             // Now we can extract all information from this data
 
-            console.log(data.followers)
-            console.log(data.bio)
+            // console.log(data.followers)
+            // console.log(data.bio)
+
+            
+            document.querySelector('img').src = data.avatar_url
+            document.querySelector('#name').innerHTML = `<b>${data.name}</b>`
+            document.querySelector('#repo').innerHTML = `Public Repo: ${data.public_repos}`
         }
     }
     xhr.send()
